@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricky's Mental Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        img {
+            width: 240px;
+            height: 200px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #guidelabel {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ricky's Mental Test</h1>
+<p id="guidelabel">Choose one option by intuition</p>
+<img id="container" src="mypicture/1.png.png" alt="Personality Image">
+
+<div id="buttons">
+    <button onclick="myper2()">Smile</button>
+    <button onclick="myper()">Bird and Sky</button>
+    <button id="button3" style="display:none;" onclick="myobs()">Hand</button>
+    <button id="button4" style="display:none;" onclick="myobs2()">Eyes</button>
+    <button id="button5" style="display:none;" onclick="mymot()">Fire</button>
+    <button id="button6" style="display:none;" onclick="mymot2()">Clock</button>
+    <button id="button7" style="display:none;" onclick="myfor2()">Dragon</button>
+    <button id="button8" style="display:none;" onclick="myfor()">Cloud</button>
+    <button id="button9" style="display:none;" onclick="kkk()">Click me!</button>
+</div>
+
+<script>
+    let result = [];
+
+    function myper() {
+        result.push("Personality: You pay more attention to money and power");
+        document.getElementById('container').src = "mypicture/2.png.png";
+        document.getElementById('button3').style.display = 'inline-block';
+        document.getElementById('button4').style.display = 'inline-block';
+        hideButtons(1, 2);
+    }
+
+    function myper2() {
+        result.push("Personality: Value the first impression and hate the same thing");
+        document.getElementById('container').src = "mypicture/2.png.png";
+        document.getElementById('button3').style.display = 'inline-block';
+        document.getElementById('button4').style.display = 'inline-block';
+        hideButtons(1, 2);
+    }
+
+    function myobs() {
+        result.push("Obstacle: Your impulsive personality will become your barrier");
+        document.getElementById('container').src = "mypicture/3.png.png";
+        document.getElementById('button5').style.display = 'inline-block';
+        document.getElementById('button6').style.display = 'inline-block';
+        hideButtons(3, 4);
+    }
+
+    function myobs2() {
+        result.push("Obstacle: Your fear of things can be a hindrance for you");
+        document.getElementById('container').src = "mypicture/3.png.png";
+        document.getElementById('button5').style.display = 'inline-block';
+        document.getElementById('button6').style.display = 'inline-block';
+        hideButtons(3, 4);
+    }
+
+    function mymot() {
+        result.push("Motivation: Your passion will be your motivation, but remember to take care of yourself");
+        document.getElementById('container').src = "mypicture/4.png.png";
+        document.getElementById('button7').style.display = 'inline-block';
+        document.getElementById('button8').style.display = 'inline-block';
+        hideButtons(5, 6);
+    }
+
+    function mymot2() {
+        result.push("Motivation: Your self-discipline and strictness will help you, but remember to relax at the right time so as not to lose the joy of life");
+        document.getElementById('container').src = "mypicture/4.png.png";
+        document.getElementById('button7').style.display = 'inline-block';
+        document.getElementById('button8').style.display = 'inline-block';
+        hideButtons(5, 6);
+    }
+
+    function myfor() {
+        result.push("Fortune: Your way of dealing with people will make you meet noble people, remember to show your talents at the right time");
+        document.getElementById('container').src = "mypicture/5.png.png";
+        document.getElementById('button9').style.display = 'inline-block';
+        hideButtons(7, 8);
+    }
+
+    function myfor2() {
+        result.push("Fortune: Soak up the experience of the low tide and stick to it, and what you want will be right in front of you");
+        document.getElementById('container').src = "mypicture/5.png.png";
+        document.getElementById('button9').style.display = 'inline-block';
+        hideButtons(7, 8);
+    }
+
+    function kkk() {
+        document.getElementById('guidelabel').innerText = result.join('\n');
+        document.getElementById('container').style.display = 'none';
+    }
+
+    function hideButtons(...buttonIds) {
+        buttonIds.forEach(id => {
+            document.querySelector(`button:nth-child(${id})`).style.display = 'none';
+        });
+    }
+</script>
+
+</body>
+</html>
